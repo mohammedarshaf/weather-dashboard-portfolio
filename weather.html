@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Weather Dashboard - M. Shahul Hameed</title>
+    <meta name="description" content="Live Real-Time Weather Dashboard using Open-Meteo API to view temperature, humidity, wind speed, and forecasts." />
+    <meta property="og:title" content="Real-Time Weather Dashboard - M. Shahul Hameed" />
+    <meta property="og:description" content="Live Real-Time Weather Dashboard using Open-Meteo API to view temperature, humidity, wind speed, and forecasts." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts for typography pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Dedicated Weather Dashboard CSS -->
+    <link rel="stylesheet" href="/weather.css" />
+  </head>
+  <body>
+    <!-- ==========================================================================
+         SEMANTIC HEADER & NAVIGATION
+         ========================================================================== -->
+    <header class="site-header" id="header">
+      <div class="container">
+        <nav class="nav-container" aria-label="Main Navigation">
+          <!-- Brand Logo -->
+          <a href="/index.html#home" class="brand-logo" id="nav-brand" aria-label="M. Shahul Hameed Homepage">
+            <div class="brand-symbol">SH</div>
+            <div class="brand-text">
+              <span class="brand-name">M. Shahul Hameed</span>
+              <span class="brand-role">AI &amp; Data Science</span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation Links -->
+          <ul class="nav-links" id="desktop-nav-links">
+            <li><a href="/index.html#home" class="nav-link" id="nav-home">Home</a></li>
+            <li><a href="/index.html#about" class="nav-link" id="nav-about">About</a></li>
+            <li><a href="/index.html#skills" class="nav-link" id="nav-skills">Skills</a></li>
+            <li><a href="/index.html#projects" class="nav-link" id="nav-projects">Projects</a></li>
+            <li><a href="/index.html#internships" class="nav-link" id="nav-internships">Internships</a></li>
+            <li><a href="/index.html#contact" class="nav-link" id="nav-contact">Contact</a></li>
+            <li><a href="/weather.html" class="nav-link active" id="nav-weather">Weather</a></li>
+          </ul>
+
+          <!-- Navigation Action Controls -->
+          <div class="nav-actions">
+            <!-- Light/Dark Mode Toggle Button -->
+            <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-label="Switch theme mode" title="Switch theme mode">
+              <!-- Sun Icon for Dark Mode -->
+              <svg class="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <!-- Moon Icon for Light Mode -->
+              <svg class="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button type="button" class="mobile-toggle-btn" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-menu" id="mobile-menu" aria-label="Mobile Navigation Drawer">
+        <a href="/index.html#home" class="nav-link" id="mob-nav-home">Home</a>
+        <a href="/index.html#about" class="nav-link" id="mob-nav-about">About</a>
+        <a href="/index.html#skills" class="nav-link" id="mob-nav-skills">Skills</a>
+        <a href="/index.html#projects" class="nav-link" id="mob-nav-projects">Projects</a>
+        <a href="/index.html#internships" class="nav-link" id="mob-nav-internships">Internships</a>
+        <a href="/index.html#contact" class="nav-link" id="mob-nav-contact">Contact</a>
+        <a href="/weather.html" class="nav-link active" id="mob-nav-weather">Weather</a>
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+         MAIN WEATHER DASHBOARD
+         ========================================================================== -->
+    <main class="weather-main" id="main-content">
+      <div class="container">
+        <!-- Weather Dashboard Title Header -->
+        <header class="weather-header">
+          <div class="weather-badge">
+            <span class="badge-pulse" aria-hidden="true"></span>
+            <span>Live Meteorological Data &bull; Free Open-Meteo API</span>
+          </div>
+          <h1 class="weather-title">
+            Real-Time <span class="weather-title-gradient">Weather Dashboard</span>
+          </h1>
+          <p class="weather-subtitle">
+            Search atmospheric conditions, temperature, relative humidity, wind velocity, and multi-day forecasts for any city worldwide.
+          </p>
+        </header>
+
+        <!-- Search Bar & City Selector Section -->
+        <section class="search-section" aria-label="City Weather Search">
+          <form class="search-form" id="city-search-form" role="search">
+            <div class="search-icon-wrapper" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <input
+              type="text"
+              class="search-input"
+              id="city-input"
+              placeholder="Search by city name (e.g. Madurai, Chennai, Tokyo, London)..."
+              autocomplete="off"
+              aria-label="Enter city name to search weather"
+              value="Madurai"
+              required
+            />
+            <button type="submit" class="search-btn" id="search-btn" aria-label="Search weather for entered city">
+              <span>Search</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Quick City Suggestion Chips -->
+          <div class="quick-cities" aria-label="Quick city suggestions">
+            <span class="quick-label">Popular:</span>
+            <button type="button" class="city-chip active" data-city="Madurai">Madurai</button>
+            <button type="button" class="city-chip" data-city="Chennai">Chennai</button>
+            <button type="button" class="city-chip" data-city="Bengaluru">Bengaluru</button>
+            <button type="button" class="city-chip" data-city="Mumbai">Mumbai</button>
+            <button type="button" class="city-chip" data-city="Delhi">Delhi</button>
+            <button type="button" class="city-chip" data-city="London">London</button>
+            <button type="button" class="city-chip" data-city="Tokyo">Tokyo</button>
+            <button type="button" class="city-chip" data-city="New York">New York</button>
+            <button type="button" class="city-chip" data-city="Dubai">Dubai</button>
+          </div>
+        </section>
+
+        <!-- Feedback States Container (Loading & Error) -->
+        <div class="state-container" aria-live="polite">
+          <!-- Loading Card -->
+          <div class="loading-card" id="loading-state">
+            <div class="spinner" aria-hidden="true"></div>
+            <div>
+              <p class="loading-text">Retrieving Live Atmospheric Metrics...</p>
+              <p class="loading-subtext" id="loading-city-name">Fetching data for "Madurai"...</p>
+            </div>
+          </div>
+
+          <!-- Error Alert Card -->
+          <div class="error-card" id="error-state" role="alert">
+            <div class="error-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h2 class="error-title">Location Inquiry Notice</h2>
+            <p class="error-message" id="error-message">
+              We couldn't retrieve meteorological data for that city. Please verify the spelling or test a different location.
+            </p>
+            <button type="button" class="btn-retry" id="retry-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              <span>Try Again</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Weather Display Results Section -->
+        <div class="weather-display" id="weather-display">
+          <!-- 1. Hero Weather Card -->
+          <section class="weather-hero-card" aria-label="Current Weather Overview">
+            <div class="hero-card-top">
+              <div class="location-info">
+                <h2>
+                  <span id="city-name">Madurai</span>
+                  <span class="country-pill" id="country-name">India</span>
+                </h2>
+                <p class="location-region" id="region-name">Tamil Nadu, India</p>
+              </div>
+
+              <div class="last-updated" id="last-updated-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Updated Just now</span>
+              </div>
+            </div>
+
+            <div class="hero-weather-main">
+              <div class="temp-visual-group">
+                <div class="weather-icon-large" id="weather-icon-container" aria-hidden="true">
+                  <!-- Dynamic SVG will be rendered here -->
+                </div>
+
+                <div class="temperature-display">
+                  <span class="temp-number" id="temp-value">--</span>
+                  <div class="temp-unit-toggle" role="group" aria-label="Temperature unit switcher">
+                    <button type="button" class="unit-btn active" id="unit-c">&deg;C</button>
+                    <button type="button" class="unit-btn" id="unit-f">&deg;F</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="condition-summary">
+                <span class="condition-text" id="weather-condition">Checking atmospheric conditions...</span>
+                <span class="apparent-temp" id="apparent-temp">Feels like --&deg;C</span>
+                <div class="hero-range-pills">
+                  <span class="range-pill pill-high" id="today-high">H: --&deg;C</span>
+                  <span class="range-pill pill-low" id="today-low">L: --&deg;C</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Atmospheric Metrics Grid (Humidity, Wind Speed, etc.) -->
+          <section class="metrics-section" aria-label="Detailed Atmospheric Metrics">
+            <h2 class="metrics-title">Atmospheric Indicators</h2>
+            <div class="metrics-grid">
+              <!-- Relative Humidity -->
+              <article class="metric-card" id="card-humidity">
+                <div class="metric-header">
+                  <span class="metric-label">Relative Humidity</span>
+                  <div class="metric-icon-box teal" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="metric-value-box">
+                  <span class="metric-value" id="metric-humidity">--</span>
+                </div>
+                <p class="metric-desc" id="metric-humidity-desc">Relative water vapor saturation in atmosphere</p>
+              </article>
+
+              <!-- Wind Velocity -->
+              <article class="metric-card" id="card-wind">
+                <div class="metric-header">
+                  <span class="metric-label">Wind Velocity</span>
+                  <div class="metric-icon-box" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="metric-value-box">
+                  <span class="metric-value" id="metric-wind">--</span>
+                </div>
+                <p class="metric-desc" id="metric-wind-desc">Surface wind speed measured at 10m altitude</p>
+              </article>
+
+              <!-- Precipitation -->
+              <article class="metric-card" id="card-precipitation">
+                <div class="metric-header">
+                  <span class="metric-label">Precipitation</span>
+                  <div class="metric-icon-box accent" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="8" y1="19" x2="8" y2="21"></line>
+                      <line x1="8" y1="13" x2="8" y2="15"></line>
+                      <line x1="16" y1="19" x2="16" y2="21"></line>
+                      <line x1="16" y1="13" x2="16" y2="15"></line>
+                      <line x1="12" y1="21" x2="12" y2="23"></line>
+                      <line x1="12" y1="15" x2="12" y2="17"></line>
+                      <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="metric-value-box">
+                  <span class="metric-value" id="metric-precipitation">--</span>
+                </div>
+                <p class="metric-desc" id="metric-precipitation-desc">Current rainfall / water volume</p>
+              </article>
+
+              <!-- Geographic Coordinates -->
+              <article class="metric-card" id="card-coords">
+                <div class="metric-header">
+                  <span class="metric-label">Geo Position</span>
+                  <div class="metric-icon-box orange" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <div class="metric-value-box">
+                  <span class="metric-value" id="metric-coords" style="font-size: 1.35rem;">--</span>
+                </div>
+                <p class="metric-desc" id="metric-coords-desc">Latitude, Longitude &amp; Elevation</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- 3. 7-Day Meteorological Forecast Section -->
+          <section class="forecast-section" aria-label="7-Day Weather Outlook">
+            <h2 class="forecast-title">7-Day Meteorological Outlook</h2>
+            <div class="forecast-grid" id="forecast-grid">
+              <!-- Dynamically populated daily cards -->
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- ==========================================================================
+         SEMANTIC FOOTER
+         ========================================================================== -->
+    <footer class="site-footer" id="footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <span class="footer-logo-text">M. Shahul Hameed</span>
+          <p class="footer-copy">
+            &copy; 2026 M. Shahul Hameed &bull; Real-Time Weather Dashboard powered by Open-Meteo.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="/index.html#home" class="footer-link">Home</a>
+          <a href="/index.html#about" class="footer-link">About</a>
+          <a href="/index.html#skills" class="footer-link">Skills</a>
+          <a href="/index.html#projects" class="footer-link">Projects</a>
+          <a href="/index.html#internships" class="footer-link">Internships</a>
+          <a href="/index.html#contact" class="footer-link">Contact</a>
+          <a href="/weather.html" class="footer-link" style="color: var(--primary-color); font-weight: 600;">Weather</a>
+          <button type="button" class="back-to-top-btn" id="back-to-top-btn" aria-label="Scroll back to top">
+            <span>Back to top</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Weather Dashboard JavaScript -->
+    <script type="module" src="/weather.js"></script>
+  </body>
+</html>

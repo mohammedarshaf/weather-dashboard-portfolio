@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M. Shahul Hameed - Portfolio</title>
+    <meta name="description" content="Modern personal portfolio of M. Shahul Hameed, B.Tech AI & Data Science student and aspiring Data Scientist." />
+    <meta property="og:title" content="M. Shahul Hameed - Portfolio" />
+    <meta property="og:description" content="Modern personal portfolio of M. Shahul Hameed, B.Tech AI & Data Science student and aspiring Data Scientist." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- External Google Fonts for polished typography pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Pure Custom CSS Design System -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- ==========================================================================
+         SEMANTIC HEADER & NAVIGATION (FLEXBOX)
+         ========================================================================== -->
+    <header class="site-header" id="header">
+      <div class="container">
+        <nav class="nav-container" aria-label="Main Navigation">
+          <!-- Brand Logo -->
+          <a href="#home" class="brand-logo" id="nav-brand" aria-label="M. Shahul Hameed Homepage">
+            <div class="brand-symbol">SH</div>
+            <div class="brand-text">
+              <span class="brand-name">M. Shahul Hameed</span>
+              <span class="brand-role">AI &amp; Data Science</span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation Links (Flexbox) -->
+          <ul class="nav-links" id="desktop-nav-links">
+            <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+            <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+            <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+            <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+            <li><a href="#internships" class="nav-link" id="nav-internships">Internships</a></li>
+            <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+            <li><a href="/weather.html" class="nav-link" id="nav-weather">Weather</a></li>
+          </ul>
+
+          <!-- Navigation Action Controls (Flexbox) -->
+          <div class="nav-actions">
+            <!-- Light/Dark Mode Toggle Button -->
+            <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-label="Switch theme mode" title="Switch theme mode">
+              <!-- Sun Icon for Dark Mode -->
+              <svg class="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <!-- Moon Icon for Light Mode -->
+              <svg class="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button type="button" class="mobile-toggle-btn" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-menu" id="mobile-menu" aria-label="Mobile Navigation Drawer">
+        <a href="#home" class="nav-link" id="mob-nav-home">Home</a>
+        <a href="#about" class="nav-link" id="mob-nav-about">About</a>
+        <a href="#skills" class="nav-link" id="mob-nav-skills">Skills</a>
+        <a href="#projects" class="nav-link" id="mob-nav-projects">Projects</a>
+        <a href="#internships" class="nav-link" id="mob-nav-internships">Internships</a>
+        <a href="#contact" class="nav-link" id="mob-nav-contact">Contact</a>
+        <a href="/weather.html" class="nav-link" id="mob-nav-weather">Weather</a>
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+         SEMANTIC MAIN CONTENT
+         ========================================================================== -->
+    <main id="main-content">
+      <!-- 1. HOME / HERO SECTION (CSS GRID ON DESKTOP) -->
+      <section class="section hero-section" id="home" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Left Hero Content -->
+            <div class="hero-content">
+              <div class="hero-badge-container">
+                <span class="hero-status-badge">
+                  <span class="status-indicator" aria-hidden="true"></span>
+                  Aspiring Data Scientist &bull; Open to Opportunities
+                </span>
+              </div>
+
+              <h1 class="hero-name" id="hero-heading">
+                Hi, I'm <br />
+                <span class="hero-title-highlight">M. Shahul Hameed</span>
+              </h1>
+
+              <div class="hero-role-tag">
+                B.Tech AI &amp; Data Science Student
+              </div>
+
+              <p class="hero-intro">
+                Passionate undergraduate engineering student exploring the intersection of Artificial Intelligence, Data Science, and modern Web Development. I design intelligent algorithms, perform in-depth data modeling, and architect responsive digital applications that deliver real-world impact.
+              </p>
+
+              <!-- Flexbox Button Group -->
+              <div class="btn-group" id="hero-cta-group">
+                <a href="#projects" class="btn btn-primary" id="btn-view-projects">
+                  <span>View Projects</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary" id="btn-contact-me">
+                  <span>Contact Me</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Hero Interactive Bio Card (CSS Grid layout element) -->
+            <article class="hero-card" id="hero-profile-card">
+              <div class="hero-card-header">
+                <div class="avatar-container">
+                  <div class="avatar-inner">SH</div>
+                </div>
+                <div class="hero-card-bio">
+                  <h3>M. Shahul Hameed</h3>
+                  <p>B.Tech Artificial Intelligence &amp; Data Science</p>
+                </div>
+              </div>
+
+              <!-- Quick Stats Grid inside Hero -->
+              <div class="hero-stats-grid">
+                <div class="stat-item" id="stat-internships">
+                  <span class="stat-number">3</span>
+                  <span class="stat-label">Internships</span>
+                </div>
+                <div class="stat-item" id="stat-skills">
+                  <span class="stat-number">10+</span>
+                  <span class="stat-label">Core Skills</span>
+                </div>
+                <div class="stat-item" id="stat-projects">
+                  <span class="stat-number">2+</span>
+                  <span class="stat-label">AI / Web Apps</span>
+                </div>
+                <div class="stat-item" id="stat-domains">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Committed to AI</span>
+                </div>
+              </div>
+
+              <!-- Visual Code / Pipeline Snippet -->
+              <div class="code-badge" aria-hidden="true">
+                <span class="code-prompt">&gt;&gt;&gt;</span>
+                <span>ai_triage = MediBot.predict(symptoms)</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ABOUT SECTION (CSS GRID) -->
+      <section class="section about-section" id="about" aria-labelledby="about-heading">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Profile Overview</span>
+            <h2 class="section-title" id="about-heading">About Me</h2>
+            <p class="section-description">
+              I am a B.Tech student interested in Artificial Intelligence, Data Science and Web Development.
+            </p>
+          </header>
+
+          <!-- 4-Column / 2-Column Responsive CSS Grid of Articles -->
+          <div class="about-grid">
+            <article class="about-card" id="about-academics">
+              <div class="about-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <h3>B.Tech Candidate</h3>
+              <p>
+                Pursuing Bachelor of Technology in Artificial Intelligence and Data Science with deep focus on probability, linear algebra, and data engineering.
+              </p>
+              <ul class="about-card-list">
+                <li class="about-list-item">
+                  <span class="about-list-bullet">&bull;</span>
+                  <span>Core AI &amp; Machine Learning foundations</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-bullet">&bull;</span>
+                  <span>Data structures, algorithms &amp; database design</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="about-card" id="about-ai-ds">
+              <div class="about-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <h3>Data Science &amp; AI Focus</h3>
+              <p>
+                Passionate about discovering trends within complex datasets, training predictive models, and applying Generative AI to solve healthcare and social challenges.
+              </p>
+              <ul class="about-card-list">
+                <li class="about-list-item">
+                  <span class="about-list-bullet">&bull;</span>
+                  <span>Predictive analytics &amp; triage modeling</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-bullet">&bull;</span>
+                  <span>Exploratory data analysis &amp; visualization</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="about-card" id="about-web-dev">
+              <div class="about-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Modern Web Development</h3>
+              <p>
+                Proficient in building clean, semantic web solutions using modern CSS layout systems like CSS Grid, Flexbox, responsive typography, and mobile-first principles.
+              </p>
+              <ul class="about-card-list">
+                <li class="about-list-item">
+                  <span class="about-list-bullet">&bull;</span>
+                  <span>Semantic HTML5 &amp; CSS3 Architecture</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-bullet">&bull;</span>
+                  <span>Accessible UI &amp; responsive design systems</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="about-card" id="about-goals">
+              <div class="about-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3>Vision &amp; Ambition</h3>
+              <p>
+                Aspiring to work as a Data Scientist and Machine Learning practitioner, contributing to production-grade intelligent systems and high-performing analytical solutions.
+              </p>
+              <ul class="about-card-list">
+                <li class="about-list-item">
+                  <span class="about-list-bullet">&bull;</span>
+                  <span>Agile collaboration &amp; continuous learning</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-bullet">&bull;</span>
+                  <span>Bridging research into functional prototypes</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SKILLS SECTION (CSS GRID) -->
+      <section class="section skills-section" id="skills" aria-labelledby="skills-heading">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Technical Competencies</span>
+            <h2 class="section-title" id="skills-heading">Skills &amp; Technologies</h2>
+            <p class="section-description">
+              A comprehensive toolkit developed through academic coursework, internships, and hands-on AI project implementation.
+            </p>
+          </header>
+
+          <!-- CSS Grid 2D layout for Skills Cards -->
+          <div class="skills-grid" id="skills-grid-container">
+            <!-- 1. Python -->
+            <article class="skill-card" id="skill-python">
+              <div class="skill-icon-wrapper" aria-hidden="true">Py</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">Python</h3>
+                  <span class="skill-category">Programming</span>
+                </div>
+                <p class="skill-desc">NumPy, Pandas, Scikit-Learn &amp; ML automation</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="90%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. C -->
+            <article class="skill-card" id="skill-c">
+              <div class="skill-icon-wrapper" aria-hidden="true">C</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">C</h3>
+                  <span class="skill-category">Programming</span>
+                </div>
+                <p class="skill-desc">Memory management, pointers &amp; data structures</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="80%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. SQL -->
+            <article class="skill-card" id="skill-sql">
+              <div class="skill-icon-wrapper" aria-hidden="true">SQL</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">SQL</h3>
+                  <span class="skill-category">Database</span>
+                </div>
+                <p class="skill-desc">Relational querying, joins, aggregation &amp; indexing</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="85%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. HTML -->
+            <article class="skill-card" id="skill-html">
+              <div class="skill-icon-wrapper" aria-hidden="true">H5</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">HTML</h3>
+                  <span class="skill-category">Web Dev</span>
+                </div>
+                <p class="skill-desc">Semantic structure, accessibility &amp; SEO best practices</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="95%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5. CSS -->
+            <article class="skill-card" id="skill-css">
+              <div class="skill-icon-wrapper" aria-hidden="true">CSS</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">CSS</h3>
+                  <span class="skill-category">Web Dev</span>
+                </div>
+                <p class="skill-desc">CSS Grid, Flexbox, custom variables &amp; mobile-first</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="92%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6. Excel -->
+            <article class="skill-card" id="skill-excel">
+              <div class="skill-icon-wrapper" aria-hidden="true">XLS</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">Excel</h3>
+                  <span class="skill-category">Analytics</span>
+                </div>
+                <p class="skill-desc">Pivot tables, statistical formulas &amp; charting</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="85%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7. Git -->
+            <article class="skill-card" id="skill-git">
+              <div class="skill-icon-wrapper" aria-hidden="true">Git</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">Git</h3>
+                  <span class="skill-category">Tools</span>
+                </div>
+                <p class="skill-desc">Branching models, commits, merge &amp; version control</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="88%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 8. GitHub -->
+            <article class="skill-card" id="skill-github">
+              <div class="skill-icon-wrapper" aria-hidden="true">GH</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">GitHub</h3>
+                  <span class="skill-category">Tools</span>
+                </div>
+                <p class="skill-desc">Repositories, pull requests &amp; open-source workflows</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="88%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 9. Data Science -->
+            <article class="skill-card" id="skill-data-science">
+              <div class="skill-icon-wrapper" aria-hidden="true">DS</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">Data Science</h3>
+                  <span class="skill-category">Core Field</span>
+                </div>
+                <p class="skill-desc">EDA, feature engineering, regression &amp; classification</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="90%"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 10. Generative AI -->
+            <article class="skill-card" id="skill-gen-ai">
+              <div class="skill-icon-wrapper" aria-hidden="true">Gen</div>
+              <div class="skill-info">
+                <div class="skill-header">
+                  <h3 class="skill-name">Generative AI</h3>
+                  <span class="skill-category">Advanced AI</span>
+                </div>
+                <p class="skill-desc">LLMs, prompt engineering &amp; assistive agent workflows</p>
+                <div class="skill-bar-container" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-bar-progress" data-width="85%"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. PROJECTS SECTION (CSS GRID) -->
+      <section class="section projects-section" id="projects" aria-labelledby="projects-heading">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Featured Work</span>
+            <h2 class="section-title" id="projects-heading">Projects</h2>
+            <p class="section-description">
+              Practical implementations demonstrating applied machine learning, conversational AI, and robust responsive web engineering.
+            </p>
+          </header>
+
+          <!-- 2-Column CSS Grid Layout for Projects -->
+          <div class="projects-grid">
+            <!-- Project 1: MediBot -->
+            <article class="project-card" id="project-medibot">
+              <div class="project-header-visual">
+                <span class="project-badge-pill">Healthcare AI</span>
+                <div class="project-visual-icon" aria-hidden="true">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <h3 class="project-title">MediBot</h3>
+                <p class="project-description">
+                  AI-based rural health triage assistant designed to provide timely symptom assessment, preliminary urgency evaluation, and guidance for communities with limited immediate access to medical centers.
+                </p>
+
+                <!-- Small component alignment: Tag List (Flexbox) -->
+                <div class="tag-list" aria-label="MediBot technologies">
+                  <span class="tag-item">Artificial Intelligence</span>
+                  <span class="tag-item">Python</span>
+                  <span class="tag-item">Triage Logic</span>
+                  <span class="tag-item">Rural Health</span>
+                  <span class="tag-item">Generative AI</span>
+                </div>
+
+                <!-- Flexbox Actions -->
+                <div class="card-actions">
+                  <a href="#contact" class="btn btn-primary btn-sm" id="medibot-demo-btn">
+                    <span>Project Details</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                  <a href="https://github.com/mohammedarshaf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="medibot-repo-btn">
+                    <span>GitHub Repo</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Semantic Portfolio -->
+            <article class="project-card" id="project-semantic-portfolio">
+              <div class="project-header-visual">
+                <span class="project-badge-pill">Web Architecture</span>
+                <div class="project-visual-icon" aria-hidden="true">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <h3 class="project-title">Semantic Portfolio</h3>
+                <p class="project-description">
+                  Responsive personal portfolio website created using semantic HTML5 and modern CSS. Incorporates CSS Grid two-dimensional layouts, Flexbox alignments, CSS variables design tokens, responsive typography using clamp(), and smooth Light/Dark mode toggling.
+                </p>
+
+                <!-- Small component alignment: Tag List (Flexbox) -->
+                <div class="tag-list" aria-label="Semantic Portfolio technologies">
+                  <span class="tag-item">Semantic HTML5</span>
+                  <span class="tag-item">CSS Grid</span>
+                  <span class="tag-item">Flexbox</span>
+                  <span class="tag-item">Dark Mode</span>
+                  <span class="tag-item">Responsive</span>
+                  <span class="tag-item">JavaScript</span>
+                </div>
+
+                <!-- Flexbox Actions -->
+                <div class="card-actions">
+                  <a href="#home" class="btn btn-primary btn-sm" id="portfolio-live-btn">
+                    <span>Live Showcase</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                  <a href="https://github.com/mohammedarshaf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="portfolio-source-btn">
+                    <span>GitHub Repo</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. INTERNSHIPS SECTION (CSS GRID) -->
+      <section class="section internships-section" id="internships" aria-labelledby="internships-heading">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Experience &amp; Industry Exposure</span>
+            <h2 class="section-title" id="internships-heading">Internships</h2>
+            <p class="section-description">
+              Practical learning experiences bridging theoretical coursework with real-world industry applications.
+            </p>
+          </header>
+
+          <!-- 3-Column / Responsive CSS Grid of Internships -->
+          <div class="internships-grid">
+            <!-- Internship 1: Data Science -->
+            <article class="internship-card" id="internship-data-science">
+              <div class="internship-header">
+                <div class="internship-icon-title">
+                  <div class="internship-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10"></line>
+                      <line x1="12" y1="20" x2="12" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                  </div>
+                  <h3 class="internship-title">Data Science</h3>
+                </div>
+                <span class="internship-badge">Internship</span>
+              </div>
+
+              <p class="internship-desc">
+                Applied statistical methodologies and machine learning pipelines to analyze structured datasets, uncover meaningful patterns, and evaluate predictive accuracy.
+              </p>
+
+              <div class="internship-highlights">
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Exploratory data analysis using Python (Pandas, NumPy)</span>
+                </div>
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Data cleaning, normalization &amp; outlier handling</span>
+                </div>
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Relational data extraction &amp; aggregation with SQL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Internship 2: Web Development -->
+            <article class="internship-card" id="internship-web-dev">
+              <div class="internship-header">
+                <div class="internship-icon-title">
+                  <div class="internship-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <h3 class="internship-title">Web Development</h3>
+                </div>
+                <span class="internship-badge">Internship</span>
+              </div>
+
+              <p class="internship-desc">
+                Developed responsive frontend interfaces adhering to semantic HTML5 standards, modular CSS architectures, fluid mobile-first layouts, and cross-browser performance.
+              </p>
+
+              <div class="internship-highlights">
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Crafting mobile-first responsive web pages</span>
+                </div>
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Implementing CSS Grid &amp; Flexbox component layouts</span>
+                </div>
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Interactive DOM scripting with vanilla JavaScript</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Internship 3: Generative AI -->
+            <article class="internship-card" id="internship-gen-ai">
+              <div class="internship-header">
+                <div class="internship-icon-title">
+                  <div class="internship-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                    </svg>
+                  </div>
+                  <h3 class="internship-title">Generative AI</h3>
+                </div>
+                <span class="internship-badge">Internship</span>
+              </div>
+
+              <p class="internship-desc">
+                Explored Large Language Model architectures, prompt engineering strategies, and generative pipeline integrations for assistive decision-support tools.
+              </p>
+
+              <div class="internship-highlights">
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Prompt design &amp; structured LLM response parsing</span>
+                </div>
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Conversational assistants &amp; automated triage flows</span>
+                </div>
+                <div class="internship-highlight-item">
+                  <span class="check-bullet">&check;</span>
+                  <span>Prototyping AI-driven workflows for practical use cases</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CONTACT SECTION (CSS GRID) -->
+      <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="section-title" id="contact-heading">Contact Me</h2>
+            <p class="section-description">
+              Feel free to reach out for collaborations, project inquiries, or discussions regarding data science and artificial intelligence.
+            </p>
+          </header>
+
+          <div class="contact-grid">
+            <!-- Contact Information Card -->
+            <article class="contact-info-card" id="contact-details-card">
+              <div>
+                <h3>Let's Connect</h3>
+                <p>
+                  I'm actively seeking opportunities to learn, contribute, and collaborate on data science, machine learning, and AI projects.
+                </p>
+              </div>
+
+              <div class="contact-list">
+                <!-- Email Contact Item -->
+                <div class="contact-item" id="contact-email-item">
+                  <div class="contact-item-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-item-content">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:mohammedarshaf3@gmail.com" class="contact-value" id="email-link">mohammedarshaf3@gmail.com</a>
+                  </div>
+                  <button type="button" class="copy-btn" id="copy-email-btn" aria-label="Copy email address" title="Copy email address">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- LinkedIn Contact Item -->
+                <a href="https://www.linkedin.com/in/shahul-hameed-542359422" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-linkedin-item">
+                  <div class="contact-item-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </div>
+                  <div class="contact-item-content">
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">shahul-hameed-542359422</span>
+                  </div>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+
+                <!-- GitHub Contact Item -->
+                <a href="https://github.com/mohammedarshaf" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-github-item">
+                  <div class="contact-item-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </div>
+                  <div class="contact-item-content">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">github.com/mohammedarshaf</span>
+                  </div>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Interactive Contact Form Card -->
+            <article class="contact-form-card" id="contact-form-container">
+              <form class="contact-form" id="portfolio-contact-form" novalidate>
+                <div class="form-group">
+                  <label for="sender-name" class="form-label">Full Name</label>
+                  <input type="text" id="sender-name" class="form-input" placeholder="Your Name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-email" class="form-label">Email Address</label>
+                  <input type="email" id="sender-email" class="form-input" placeholder="name@example.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-message" class="form-label">Message</label>
+                  <textarea id="sender-message" class="form-textarea" placeholder="Write your message here..." rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="form-submit-btn">
+                  <span>Send Message</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+
+                <div class="form-feedback" id="form-feedback" role="alert"></div>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+         SEMANTIC FOOTER (FLEXBOX)
+         ========================================================================== -->
+    <footer class="site-footer" id="footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <span class="footer-logo-text">M. Shahul Hameed</span>
+          <p class="footer-copy">
+            &copy; 2026 M. Shahul Hameed. B.Tech Artificial Intelligence &amp; Data Science. Built with Semantic HTML5, CSS Grid &amp; Flexbox.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home" class="footer-link">Home</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#internships" class="footer-link">Internships</a>
+          <a href="#contact" class="footer-link">Contact</a>
+          <a href="/weather.html" class="footer-link">Weather</a>
+          <button type="button" class="back-to-top-btn" id="back-to-top-btn" aria-label="Scroll back to top">
+            <span>Back to top</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Vanilla JavaScript for Theme Toggle, Navigation & Forms -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
